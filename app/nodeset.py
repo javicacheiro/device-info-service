@@ -1,6 +1,11 @@
 import itertools
 
 def expand(txt):
+    """Expand a string representing a node range into the individual nodes
+    The node range string can contain multiple groups:
+        >>> nodeset.expand('c[13-14]-[1-2]')
+        ['c13-1', 'c13-2', 'c14-1', 'c14-2']
+    """
     groups = noderanges(txt)
     fields = []
     last = -1
